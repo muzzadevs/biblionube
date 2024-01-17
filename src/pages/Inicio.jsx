@@ -4,11 +4,14 @@ import styled from "@emotion/styled";
 
 const ContenedorInicio = styled(motion.div)`
   width: 100%;
+  height: 90vh;
   display: flex;
   align-items: center;
+  justify-content: center;
   flex-direction: column;
   position: relative;
   text-align: left;
+  padding: 2rem 2rem;
 `;
 
 const ContenedorBienvenida = styled.div`
@@ -16,7 +19,6 @@ const ContenedorBienvenida = styled.div`
   flex-direction: column;
   justify-content: center;
   max-width: 800px;
-  margin: 2rem;
 `;
 
 const Bienvenida = styled.h4`
@@ -40,12 +42,14 @@ const Bienvenida = styled.h4`
 `;
 
 const ParrafoBienvenida = styled.p`
-  color: white;
+  color: #4e6172;
   text-align: left;
+  margin-bottom: 2rem;
 `;
 
 const CajaDailyVerse = styled.div`
   color: white;
+  border-radius: 20px;
   max-width: 800px;
   height: auto;
   background-color: #6c63ff;
@@ -53,20 +57,9 @@ const CajaDailyVerse = styled.div`
   justify-content: center;
   flex-direction: column;
   align-items: center;
-  border-radius: 15px;
   border: 1px solid #6c63ff;
   padding: 2em 2em;
   text-align: center;
-  margin-top: 1rem;
-  margin: 2rem 2rem;
-`;
-
-const TituloDaily = styled.p`
-  margin-top: -1rem;
-  font-size: 1rem;
-  font-weight: 900;
-  color: #6c63ff;
-  position: relative;
 `;
 
 const Inicio = () => {
@@ -214,12 +207,13 @@ const Inicio = () => {
 
       <CajaDailyVerse>
         <div>
-          <p>{versiculoAleatorio.verseCont}</p>
+          <p style={{ fontStyle: "italic" }}>
+            "{versiculoAleatorio.verseCont}"
+          </p>
           <br />
           <p style={{ fontWeight: "bold" }}>{versiculoAleatorio.verse}</p>
         </div>
       </CajaDailyVerse>
-      <TituloDaily>VERSíCULO ALEATORIO</TituloDaily>
     </ContenedorInicio>
   );
 };

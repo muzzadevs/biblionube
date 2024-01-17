@@ -10,15 +10,17 @@ function App() {
   return (
     <>
       <Router>
-        <Navbar />
         <div className="flex">
           <Sidebar />
-          <div className="content">
-            <Routes>
-              <Route path="/" element={<Inicio />} />
-              <Route path="/archivos" element={<Archivos />} />
-              <Route path="/contacto" element={<Contacto />} />
-            </Routes>
+          <div style={{ width: "100%" }}>
+            <Navbar />
+            <div className="content">
+              <Routes>
+                <Route path="/" element={<Inicio />} />
+                <Route path="/archivos" element={<Archivos />} />
+                <Route path="/contacto" element={<Contacto />} />
+              </Routes>
+            </div>
           </div>
         </div>
       </Router>
