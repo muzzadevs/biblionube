@@ -1,4 +1,3 @@
-// src/Navbar.jsx
 import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import styled from "styled-components";
@@ -37,7 +36,7 @@ const NavLinks = styled.div`
     color: white;
     text-decoration: none;
     font-size: 1.2em;
-    margin-right: 1em; /* Margen entre los links */
+    margin-right: 1em;
   }
 
   @media (max-width: 500px) {
@@ -94,7 +93,7 @@ const ExitIcon = styled(IoMdExit)`
   cursor: pointer;
   font-size: 1.5em;
   color: white;
-  margin-left: 1em; /* Margen entre el último link y el icono de logout */
+  margin-left: 1em;
 
   @media (max-width: 500px) {
     font-size: 1.2em;
@@ -128,7 +127,7 @@ function Navbar() {
 
   const handleLogout = () => {
     navigate("/");
-    setMenuOpen(false); // Cierra el menú en el logout
+    setMenuOpen(false);
   };
 
   const toggleMenu = () => {

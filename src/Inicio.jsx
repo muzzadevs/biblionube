@@ -1,19 +1,18 @@
-// src/Inicio.jsx
 import React, { useEffect, useState } from "react";
 import styled from "styled-components";
-import versiculos from "./versiculos"; // Asumiendo que el archivo se llama versiculos.js
+import versiculos from "./versiculos";
 import IlustracionInicio from "./assets/ilustracionInicio.svg";
 
 const Contenedor = styled.div`
   display: flex;
   height: 90%;
   width: 100%;
+  flex-direction: column;
+  align-items: center;
 
-  @media (max-width: 1400px) {
-    flex-direction: column;
+  @media (min-width: 1400px) {
+    flex-direction: row;
     height: auto;
-    justify-content: center;
-    align-items: center;
   }
 `;
 
@@ -27,31 +26,13 @@ const SeccionIzquierda = styled.div`
 
   @media (max-width: 1400px) {
     padding: 10px;
-    align-items: center;
-  }
-`;
-
-const SeccionDerecha = styled.div`
-  flex: 1;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 20px;
-
-  @media (max-width: 1400px) {
-    padding: 10px;
-    align-items: center;
   }
 `;
 
 const MensajeBienvenida = styled.h1`
   font-weight: bold;
-  font-size: 50px;
-
-  @media (max-width: 1400px) {
-    font-size: 40px;
-    text-align: center;
-  }
+  font-size: 40px;
+  text-align: center;
 
   @media (max-width: 480px) {
     font-size: 30px;
@@ -61,14 +42,11 @@ const MensajeBienvenida = styled.h1`
 const Subtitulo = styled.h2`
   margin-top: 5px;
   font-weight: 100;
+  font-size: 20px;
+  text-align: center;
 
-  @media (max-width: 1400px) {
-    font-size: 20px;
-    text-align: center;
-  }
-
-  @media (max-width: 480px) {
-    font-size: 16px;
+  @media (max-width: 500px) {
+    font-size: 12px;
   }
 `;
 
@@ -80,13 +58,14 @@ const CajaVersiculo = styled.div`
   font-style: italic;
   text-align: center;
   font-size: 30px;
+  transform: scale(0.7);
+  margin-top: 20px;
 
   @media (max-width: 1400px) {
     padding: 50px;
-    margin-top: 20px;
   }
 
-  @media (max-width: 480px) {
+  @media (max-width: 500px) {
     padding: 30px;
   }
 `;
@@ -98,7 +77,7 @@ const VersiculoTexto = styled.div`
     font-size: 1.2em;
   }
 
-  @media (max-width: 480px) {
+  @media (max-width: 500px) {
     font-size: 1em;
   }
 `;
@@ -112,7 +91,7 @@ const VersiculoCita = styled.div`
     font-size: 1em;
   }
 
-  @media (max-width: 480px) {
+  @media (max-width: 500px) {
     font-size: 0.8em;
   }
 `;
@@ -120,14 +99,14 @@ const VersiculoCita = styled.div`
 const Ilustracion = styled.img`
   margin-top: 20px;
   max-width: 100%;
-  height: auto;
-  transform: scale(0.7);
+  height: 350px;
+
   @media (max-width: 1400px) {
     max-width: 80%;
   }
 
-  @media (max-width: 480px) {
-    max-width: 100%;
+  @media (max-width: 500px) {
+    max-width: 90%;
   }
 `;
 
@@ -135,7 +114,6 @@ const Inicio = () => {
   const [versiculo, setVersiculo] = useState({ texto: "", cita: "" });
 
   useEffect(() => {
-    // Selecciona un versículo aleatorio al cargar la página
     const versiculoAleatorio =
       versiculos[Math.floor(Math.random() * versiculos.length)];
     setVersiculo(versiculoAleatorio);
@@ -149,13 +127,11 @@ const Inicio = () => {
         </MensajeBienvenida>
         <Subtitulo>Dios, tu biblia, tu espacio, no sé, piénsalo.</Subtitulo>
         <Ilustracion src={IlustracionInicio} alt="Ilustración de inicio" />
-      </SeccionIzquierda>
-      <SeccionDerecha>
         <CajaVersiculo>
           <VersiculoTexto>{versiculo.texto}</VersiculoTexto>
           <VersiculoCita>{versiculo.cita}</VersiculoCita>
         </CajaVersiculo>
-      </SeccionDerecha>
+      </SeccionIzquierda>
     </Contenedor>
   );
 };

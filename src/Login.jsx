@@ -10,21 +10,32 @@ import {
   LoginForm,
 } from "./LoginStyles";
 
-const whitelist = {
-  nombre: "David",
-  mail: "dmuza@biblionube.com",
-  password: "12345",
-};
+const whitelist = [
+  {
+    nombre: "David",
+    username: "dmuza",
+    password: "12345",
+  },
+  {
+    nombre: "Echu",
+    username: "echu",
+    password: "12345",
+  },
+];
 
 function Login() {
   const navigate = useNavigate();
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    const email = event.target.email.value;
+    const username = event.target.username.value;
     const password = event.target.password.value;
 
-    if (email === whitelist.mail && password === whitelist.password) {
+    const user = whitelist.find(
+      (user) => user.username === username && user.password === password
+    );
+
+    if (user) {
       navigate("/menu-principal/inicio");
     } else {
       alert("Inicio de sesión fallido, revise sus datos.");
@@ -54,8 +65,8 @@ function Login() {
             <h2>Iniciar Sesión</h2>
             <form onSubmit={handleSubmit}>
               <div className="form-group">
-                <label htmlFor="email">Correo Electrónico</label>
-                <input type="email" id="email" name="email" required />
+                <label htmlFor="username">Usuario</label>
+                <input type="text" id="username" name="username" required />
               </div>
               <div className="form-group">
                 <label htmlFor="password">Contraseña</label>
