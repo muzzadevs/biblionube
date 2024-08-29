@@ -70,7 +70,7 @@ const CloseButton = styled.button`
 const DownloadButton = styled.a`
   display: inline-flex;
   align-items: center;
-  background-color: #3a3a3a;
+  background-color: #800020; /* Color burdeos */
   color: #ffffff;
   padding: 0.75rem 1.5rem;
   border-radius: 8px;
@@ -80,7 +80,7 @@ const DownloadButton = styled.a`
   cursor: pointer;
 
   &:hover {
-    background-color: #4a4a4a;
+    background-color: #a00028; /* Un tono más claro de burdeos para el hover */
   }
 
   svg {
