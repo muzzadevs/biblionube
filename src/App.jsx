@@ -42,7 +42,6 @@ const Navbar = styled.nav`
   position: fixed;
   top: 0;
   left: 0;
-  z-index: 100;
 
   @media (max-width: 768px) {
     padding: 0.4rem 0.8rem;
