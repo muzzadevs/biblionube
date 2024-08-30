@@ -14,4 +14,22 @@ export const GlobalStyles = createGlobalStyle`
     background-color: #1a1a1a;
     color: #ffffff;
   }
+
+  /* Estilos para personalizar el scrollbar */
+  ::-webkit-scrollbar {
+    width: 5px;  /* Ancho del scrollbar */
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background-color: #800020;  /* Color burdeos */
+    border-radius: 10px;  /* Redondeado */
+  }
+
+  ::-webkit-scrollbar-track {
+    background: #2a2a2a;  /* Color de fondo del track del scrollbar */
+  }
+  
+  /* Para Firefox */
+  scrollbar-width: thin;
+  scrollbar-color: #800020 #2a2a2a;
 `;

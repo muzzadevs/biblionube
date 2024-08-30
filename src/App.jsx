@@ -13,8 +13,8 @@ const Background = styled.div`
   left: 0;
   width: 100%;
   height: 100%;
-  background: linear-gradient(135deg, #1a1a1a, #800020); /* Negro a burdeos */
-  overflow: hidden; /* Para asegurarse de que las burbujas no causen scroll */
+  background: linear-gradient(135deg, #1a1a1a, #000000);
+  overflow: hidden; 
   z-index: -1;
 `;
 
@@ -24,6 +24,7 @@ const Bubble = styled(motion.div)`
   border-radius: 50%;
   pointer-events: none;
 `;
+
 
 const AppContainer = styled.div`
   position: relative;
@@ -35,13 +36,14 @@ const AppContainer = styled.div`
 const Navbar = styled.nav`
   width: 100%;
   padding: 0.8rem 1.6rem; /* 20% más estrecho */
-  background-color: #2a2a2a;
+  background-color: #800020;
   display: flex;
   justify-content: space-between;
   align-items: center;
   position: fixed;
   top: 0;
   left: 0;
+  z-index:1;
 
   @media (max-width: 768px) {
     padding: 0.4rem 0.8rem;
@@ -147,7 +149,7 @@ const generateBubble = (size) => ({
 function App() {
   const [selectedEscritura, setSelectedEscritura] = useState(null);
   const [menuOpen, setMenuOpen] = useState(false);
-  const bubbles = Array.from({ length: 10 }, () => generateBubble(Math.random() * 100 + 50));
+  const bubbles = Array.from({ length: 10 }, () => generateBubble(Math.random() * 100 + 250));
 
   const toggleMenu = () => setMenuOpen(!menuOpen);
 

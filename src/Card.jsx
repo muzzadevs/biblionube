@@ -2,11 +2,11 @@ import React from 'react';
 import styled from 'styled-components';
 
 const CardContainer = styled.div`
-  background-color: #2a2a2a;
+  background-color: #2e2e2e;
   border-radius: 8px;
   overflow: hidden;
   cursor: pointer;
-  transition: transform 0.2s;
+  transition: transform 1s;
 
   &:hover {
     transform: translateY(-5px);
@@ -43,7 +43,7 @@ const TagContainer = styled.div`
 `;
 
 const Tag = styled.span`
-  background-color: #3a3a3a;
+  background-color: #1e1e1e;
   color: #ffffff;
   padding: 0.25rem 0.5rem;
   border-radius: 4px;
